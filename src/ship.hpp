@@ -1,6 +1,8 @@
 #ifndef SHIP_HPP
 #define SHIP_HPP
 
+#include "location.hpp"
+
 /**
 @file ship.hpp
 @author XCOM
@@ -19,14 +21,14 @@ enum Direct {
 
 class Ship {
 private:
-    int m_health;
-    Direct m_direct;    
+    Direct m_direct;
+    Location m_location;
 public:
     Ship();
-    Ship(int, Direct);
+    Ship(Direct, Location);
+    virtual int getSize() const = 0;
     virtual ~Ship();
-    bool isDead();     
-        
+    virtual bool isDead() = 0;
 };
 
-#endif // SHIP_HPP 
+#endif // SHIP_HPP

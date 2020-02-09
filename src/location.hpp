@@ -15,20 +15,40 @@
 class Location {
 ///private members
 private:
-    int x;
-    int y;
+    int m_x;
+    int m_y;
 ///constructor
 public:
     /**
     @brief Location constructor
     */
-    Location(int x, int y);
+    Location(int x = 0, int y = 0);
 ///public methods
 public:
-    void setX();
+    /**
+    @brief seter for x coordinate
+    */
+    void setX(int x);
+    /**
+    @brief geter for x coordinate
+    */
     int getX() const;
-    void setY();
+    /**
+    @brief seter for y coordinate
+    */
+    void setY(int y);
+    /**
+    @brief geter for y coordinate
+    */
     int getY() const;
+    /**
+    @brief return x + val
+    */
+    int addX(int val);
+    /**
+    @brief return y + val
+    */
+    int addY(int val);
 };
 
 #endif ///LOCATION_HPP

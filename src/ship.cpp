@@ -2,24 +2,17 @@
 
 Ship::Ship()
 {
-
+    m_direct = HORIZONTAL;
 }
 
-Ship::Ship(int health, Direct direct): 
-    m_health(health), 
-    m_direct(direct)
+Ship::Ship(Direct direct, Location location):
+    m_direct(direct),
+    m_location(location)
 {
 
 }
 
 Ship::~Ship()
 {
-    
-}
 
-bool Ship::isDead() 
-{
-    if (0 == m_health)
-        return true;
-    return false;    
 }

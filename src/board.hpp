@@ -1,9 +1,15 @@
 #ifndef BOARD_HPP
 #define BOARD_HPP
+#include "location.hpp"
 #include "internship.hpp"
 #include "juniorship.hpp"
 #include "middleship.hpp"
 #include "seniorship.hpp"
+
+static const int maximumInternships = 4;
+static const int maximumJuniorships = 3;
+static const int maximumMidleships = 2;
+static const int maximumSeniorships = 1;
 
 class Board {
 private: //private members
@@ -13,13 +19,32 @@ private: //private members
     int m_juniorshipCount;
     int m_middleshipCount;
     int m_seniorshipCount;
-public: //public methods
+    Ship **m_ships;
+public: //constructors and destructor
     Board();
+    ~Board();
+public: //public methods
+    /**
+    @brief get count of small ships
+    */
     int getInternshipCount() const;
+
+    /**
+    @brief get count of 2 sized ships
+    */
     int getJuniorshipCount() const;
+
+    /**
+    @brief get count of 3 sized ships
+    */
     int getMiddleshipCount() const;
+
+    /**
+    @brief get count of 4 sized ships
+    */
     int getSeniorshipCount() const;
-    static int getSize() const;
+
+    static int getSize();
     void setShipOnBoard(Ship* ptr, Location startLoc, Direct direction);
     void randShipOnBoard();
     bool checkLocation(int size, Location location, Direct direction);
