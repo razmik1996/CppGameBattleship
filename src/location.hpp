@@ -20,9 +20,13 @@ private:
 ///constructor
 public:
     /**
+    @brief Location default constructor 
+    */
+    Location();
+    /**
     @brief Location constructor
     */
-    Location(int x = 0, int y = 0);
+    Location(int x, int y);
 ///public methods
 public:
     /**

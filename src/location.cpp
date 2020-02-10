@@ -1,6 +1,13 @@
 #include "location.hpp"
 
-Location::Location(int x = 0, int y = 0):
+Location::Location():
+    m_x(0),
+    m_y(0)
+{
+    
+}
+
+Location::Location(int x, int y):
     m_x(x),
     m_y(y)
 {
